@@ -1,35 +1,43 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import FontAwesome from 'react-fontawesome';
+import style from './nav.module.css';
 
+import NavigationItems from './NavigationItems';
+import SideNav from 'react-simple-sidenav';
 
+const Navigation = (props) => {
 
-class Navigation extends Component {
-
-  //Can't get props
-  navBars = () => (
-    <div>
-      <FontAwesome name='arrows'
+  const navBars = () => (
+    <div className={style.icon}>
+      <FontAwesome name='bars'
         onClick={props.onOpenNav}
         style={{
           color: 'black',
-          padding: '25px'
+          padding: '10px',
+          cursor: 'pointer',
         }}
       />
     </div>
-  )
-  render() {
-    return (
-      <div>
-        <div>
-          Profile
-        </div>
-        <div>
-          Newsfeed
-        </div>
-      </div>
-    );
-  }
+  );
+
+  return (
+    <div className={style.sideNav}>
+      <SideNav
+        showNav={props.showNav}
+        onHideNav={props.onHideNav}
+        navStyle={{
+          background: '#000033',
+          maxWidth: '250px'
+        }}
+      >
+        <NavigationItems
+          showNav={props.showNav}
+          onHideNav={props.onHideNav}
+        />
+      </SideNav>
+      {navBars()}
+    </div>
+  );
 }
 
 export default Navigation;

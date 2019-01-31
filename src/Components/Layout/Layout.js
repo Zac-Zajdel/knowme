@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
+
 import Navigation from '../Navigation/Navigation';
+import './layout.css';
+
 
 class Layout extends Component {
 
   state = {
-    diplayNav: true
+    diplayNav: false
   }
 
   toggleNav = (action) => {
-    this.setState = ({
+    this.setState({
       displayNav: action
-    });
+    })
   }
 
 
@@ -19,8 +22,8 @@ class Layout extends Component {
       <div>
         <Navigation
           showNav={this.state.displayNav}
-          onHideDisplay={() => this.toogleNav(false)}
-          onOpenNav={() => this.toogleNav(true)}
+          onHideNav={() => this.toggleNav(false)}
+          onOpenNav={() => this.toggleNav(true)}
         />
         {this.props.children}
       </div>
