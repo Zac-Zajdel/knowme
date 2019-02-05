@@ -1,6 +1,5 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-import style from './nav.module.css';
 
 import NavigationItems from './NavigationItems';
 import SideNav from 'react-simple-sidenav';
@@ -8,25 +7,28 @@ import SideNav from 'react-simple-sidenav';
 const Navigation = (props) => {
 
   const navBars = () => (
-    <div className={style.icon}>
+    <div>
       <FontAwesome name='bars'
         onClick={props.onOpenNav}
         style={{
-          color: 'black',
+          color: '#0074D9',
           padding: '10px',
           cursor: 'pointer',
+          margin: '20px 0px 0px 20px',
+          backgroundColor: 'lightGrey',
+          borderRadius: '5px'
         }}
       />
     </div>
   );
 
   return (
-    <div className={style.sideNav}>
+    <div>
       <SideNav
         showNav={props.showNav}
         onHideNav={props.onHideNav}
         navStyle={{
-          background: '#000033',
+          background: '#1E1E2E',
           maxWidth: '250px'
         }}
       >

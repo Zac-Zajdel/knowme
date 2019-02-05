@@ -8,8 +8,8 @@ const NavigationItems = (props) => {
   const items = [
     {
       type: style.option,
-      icon: 'home',
-      text: 'Home',
+      icon: 'user',
+      text: 'Profile',
       link: '/'
     },
     {
