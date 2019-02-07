@@ -34,7 +34,7 @@ const NavigationItems = (props) => {
       type: style.option,
       icon: 'sign-out',
       text: 'Sign Out',
-      link: '/signIn'
+      link: '/'
     },
 
   ];

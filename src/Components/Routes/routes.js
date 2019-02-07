@@ -6,7 +6,6 @@ import Profile from '../Profile/Profile';
 import Messages from '../Messages/Messages';
 import NewsFeed from '../NewsFeed/NewsFeed';
 import Settings from '../Settings/Settings';
-import SignIn from '../SignIn/SignIn';
 import HomePage from '../HomePage/HomePage';
 
 // Show them how the pathways work during meet-up
@@ -22,15 +21,10 @@ class Routes extends Component {
             <Route path='/messages' component={Messages} />
             <Route path='/newsfeed' component={NewsFeed} />
             <Route path='/settings' component={Settings} />
-            <Route path='/signIn' component={SignIn} />
           </Switch>
         </Layout>
-        <Switch>
-          <Route path='/' exact component={HomePage} />
-        </Switch>
+        <Route path='/' exact component={HomePage} />
       </div>
-
-
     );
   }
 }
