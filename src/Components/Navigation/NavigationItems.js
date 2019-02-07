@@ -10,7 +10,7 @@ const NavigationItems = (props) => {
       type: style.option,
       icon: 'user',
       text: 'Profile',
-      link: '/'
+      link: '/profile'
     },
     {
       type: style.option,
@@ -34,7 +34,7 @@ const NavigationItems = (props) => {
       type: style.option,
       icon: 'sign-out',
       text: 'Sign Out',
-      link: '/signout'
+      link: '/signIn'
     },
 
   ];
