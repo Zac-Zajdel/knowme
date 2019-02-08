@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 
 class Profile extends Component {
+
   render() {
     return (
-      <div>Profile Page</div>
+      <div>
+        {this.props.signIn}
+        Profile Page</div>
     );
   }
 }

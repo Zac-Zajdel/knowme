@@ -1,0 +1,22 @@
+.registration {
+  background-color: #2F3438;
+  color: white;
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+#sign-in {
+  background: url(./keyboard2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 600px;
+}
+
+#sign-in .dark-overlay {
+  min-height: 700px;
+}
+
+#sign-in .card-form {
+  opacity: 0.8;
+}

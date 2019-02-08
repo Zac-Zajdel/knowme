@@ -8,11 +8,16 @@ import NewsFeed from '../NewsFeed/NewsFeed';
 import Settings from '../Settings/Settings';
 import HomePage from '../HomePage/HomePage';
 
+
 // Show them how the pathways work during meet-up
 // This will help explain to Cody
 
 class Routes extends Component {
+
+  // REMEMBER!!!
+  // I will need to obtain from the database I am signed in by passing setState
   render() {
+
     return (
       <div>
         <Layout>
@@ -21,9 +26,9 @@ class Routes extends Component {
             <Route path='/messages' component={Messages} />
             <Route path='/newsfeed' component={NewsFeed} />
             <Route path='/settings' component={Settings} />
+            <Route path='/' exact component={HomePage} />
           </Switch>
         </Layout>
-        <Route path='/' exact component={HomePage} />
       </div>
     );
   }
