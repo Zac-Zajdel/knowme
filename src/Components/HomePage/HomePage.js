@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './HomePage.css';
-import Productivity from './productivity.jpg';
+import Productivity from './Images/productivity.jpg';
+import Security from './Images/security.jpg';
 
 class HomePage extends Component {
 
@@ -150,6 +151,31 @@ class HomePage extends Component {
                 <div className="d-flex">
                   <div className="p-4">
                     Centralized Location to share ideas and become inspired.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="security" className="py-5">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <img src={Security} alt="" className="pt-2 img-fluid mb-3 rounded-circle" />
+              </div>
+              <div className="col-md-6">
+                <h3 className="mt-4 ml-4 mb-4 display-4">Secure and Safe</h3>
+                <p className=" ml-4 ml-4 lead">At KnowMe, you can rest assured that your data will be stored using advanced technology and
+                will not be sold to 3rd parties. We use the following to help keep your data safe:</p>
+                <div className="d-flex">
+                  <div className=" ml-4 p-4 align-self-end">
+                    Extensive encryption to protect your files and login.
+            </div>
+                </div>
+                <div className="d-flex">
+                  <div className="ml-4 p-4 align-self-end">
+                    Manage privacy settings so you know who can access your data.
                   </div>
                 </div>
               </div>

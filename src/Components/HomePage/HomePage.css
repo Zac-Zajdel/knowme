@@ -6,7 +6,7 @@
 }
 
 #sign-in {
-  background: url(./keyboard2.jpg);
+  background: url(./Images/keyboard2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -19,4 +19,12 @@
 
 #sign-in .card-form {
   opacity: 0.8;
+}
+
+#security {
+  background: url(./Images/lock.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 600px;
 }
