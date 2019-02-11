@@ -11,10 +11,11 @@ const Navigation = (props) => {
       <FontAwesome name='bars'
         onClick={props.onOpenNav}
         style={{
+          width: '100%',
           color: '#0074D9',
           padding: '10px',
           cursor: 'pointer',
-          margin: '20px 0px 0px 20px',
+          margin: 0,
           backgroundColor: 'lightGrey',
           borderRadius: '5px'
         }}

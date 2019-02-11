@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Layout from '../Layout/Layout';
 import Profile from '../Profile/Profile';
-import Messages from '../Messages/Messages';
+import MessageRoute from '../MessageRoute/MessageRoute';
 import NewsFeed from '../NewsFeed/NewsFeed';
 import Settings from '../Settings/Settings';
 import HomePage from '../HomePage/HomePage';
@@ -23,7 +23,7 @@ class Routes extends Component {
         <Layout>
           <Switch>
             <Route path='/profile' component={Profile} />
-            <Route path='/messages' component={Messages} />
+            <Route path='/messages' component={MessageRoute} />
             <Route path='/newsfeed' component={NewsFeed} />
             <Route path='/settings' component={Settings} />
             <Route path='/' exact component={HomePage} />

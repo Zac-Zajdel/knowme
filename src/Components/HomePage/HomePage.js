@@ -33,8 +33,8 @@ class HomePage extends Component {
   render() {
     return (
       <div className='registration'>
-        <nav className="navbar navbar-light bg-light">
-          <a href='/' className="navbar-brand">KnowMe</a>
+        <nav id='nav-background' className="navbar navbar-light">
+          <h5 id='login-form'>Login</h5>
           <form className="form-inline">
             <input
               onChange={this.onUsernameChange}

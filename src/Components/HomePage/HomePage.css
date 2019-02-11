@@ -5,6 +5,15 @@
   font-weight: 300;
 }
 
+#nav-background {
+  background: #2F3438;
+}
+
+#login-form {
+  padding-top: 10px;
+  font-weight: 200;
+}
+
 #sign-in {
   background: url(./Images/keyboard2.jpg);
   background-repeat: no-repeat;
