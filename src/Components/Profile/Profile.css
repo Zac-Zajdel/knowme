@@ -1,9 +1,10 @@
 .app {
   display: grid;
-  height: 100%;
+  background-color: #E9EBEE;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-area: 
+  height: 95vh;
+  grid-template-areas: 
     'h h s s s s'
     'h h p p p p'
     'i i p p p p'
@@ -11,3 +12,97 @@
     'f f p p p p'
     'f f p p p p'
 }
+
+.profile-header {
+  grid-area: h;
+}
+
+.profile-search {
+  grid-area: s;
+}
+
+.profile-info {
+  grid-area: i;
+}
+
+.friends-list {
+  grid-area: f;
+}
+
+.profile-posts {
+  grid-area: p;
+}
+
+.profile-header {
+  border: 1px solid lightgrey;
+  padding: 20px 0px 20px 20px;
+}
+
+.profile-header img {
+  padding-top: 10px;
+  padding-left: 250px;
+  float: center;
+  height: 50%;
+}
+
+.profile-header .username {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 300;
+  padding-right: 20px;
+  padding-top: 4%;
+}
+
+.profile-header .joined {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 300;
+  padding-right: 20px;
+  padding-top: 4%;
+}
+
+.profile-info {
+  border: 1px solid lightgrey;
+}
+
+.profile-info .personal th {
+  border: 1px solid lightgrey;
+}
+
+.friends-list {
+  border: 1px solid lightgrey;
+}
+
+.friends-list h5{
+  padding-top: 5px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.friends-list .photo {
+  float: left;
+  padding-left: 50px;
+  padding-right: 20px;
+}
+
+.profile-posts {
+  margin: auto;
+  width: 60%;
+  padding: 15px 0 25px 0;
+  text-align: center;
+  height: 730px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.profile-search {
+  border: 1px solid lightgrey;
+  padding-top: 39px;
+}
+
+.profile-search input {
+  background-color: #E9EBEE;
+}
+
+
+
