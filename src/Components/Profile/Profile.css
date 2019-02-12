@@ -1,0 +1,13 @@
+.app {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-area: 
+    'h h s s s s'
+    'h h p p p p'
+    'i i p p p p'
+    'i i p p p p'
+    'f f p p p p'
+    'f f p p p p'
+}
