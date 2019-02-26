@@ -16,7 +16,7 @@ const NavigationItems = (props) => {
       type: style.option,
       icon: 'paper-plane',
       text: 'Newsfeed',
-      link: '/newsfeed'
+      link: '/'
     },
     {
       type: style.option,
@@ -34,7 +34,7 @@ const NavigationItems = (props) => {
       type: style.option,
       icon: 'sign-out',
       text: 'Sign Out',
-      link: '/'
+      link: '/home'
     },
 
   ];

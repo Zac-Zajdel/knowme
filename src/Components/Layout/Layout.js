@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
 import Navigation from '../Navigation/Navigation';
 import './layout.css';
-
 
 class Layout extends Component {
 
@@ -15,7 +13,6 @@ class Layout extends Component {
       displayNav: action
     })
   }
-
 
   render() {
     return (
@@ -30,6 +27,5 @@ class Layout extends Component {
     );
   }
 }
-
 
 export default Layout;

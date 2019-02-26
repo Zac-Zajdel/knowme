@@ -6,8 +6,7 @@ class ProfileHeader extends Component {
     return (
       <div className='profile-header'>
         <img src={profilePic} alt='profile' />
-        <div className='username'>Cody Pytash</div>
-        <div className='joined'>Joined: 02/12/19</div>
+        <div className='username'>{this.props.username}</div>
       </div>
     );
   }

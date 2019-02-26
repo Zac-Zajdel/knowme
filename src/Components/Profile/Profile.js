@@ -9,9 +9,10 @@ import ProfileInfo from './ProfileInfo';
 class Profile extends Component {
 
   render() {
+    console.log('The username is:' + this.props.username);
     return (
       <div className='app'>
-        <ProfileHeader />
+        <ProfileHeader {...this.props} />
         <ProfileInfo />
         <ProfileSearchBar />
         <FriendsList />
