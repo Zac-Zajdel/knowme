@@ -1,10 +1,10 @@
 # knowme
 
 This application will be a modern social media platform named KnowMe.
+This application is geared toward developers who are working on a project.
 
 Several processes can be done using this app such as:
-  * Instant Messaging
   * Customizable Profile
-  * Posting Photos/Videos/Statuses
-  * Following other users
-  * Account Settings
+  * Posting Photos from the Gravatar Email
+  * Interacting with your other users
+  * Change multiple things about your account and get to coding!

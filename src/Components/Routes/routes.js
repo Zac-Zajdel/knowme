@@ -18,7 +18,7 @@ class Routes extends Component {
           <Switch>
             <Route path='/profile' render={() => <Profile {...this.props} />} />
             <Route path='/messages' render={() => <MessageRoute {...this.props} />} />
-            <Route path='/settings' component={Settings} />
+            <Route path='/settings' render={() => <Settings {...this.props} />} />
             <Route path='/' component={NewsFeed} />
           </Switch>
         </Layout>
