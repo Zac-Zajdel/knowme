@@ -16,6 +16,13 @@ class Register extends Component {
     errors: {}
   }
 
+  // If the user is logged in, always forward them back to dashboard.
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors })
@@ -125,7 +132,7 @@ Register.propTypes = {
 
 // Will allow us to grab props such as this.props.auth
 // This also comes from the root reducer index.js
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
