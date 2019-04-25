@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
-import setAuthToken from './utils/setAuthToken';
+import setAuthHeader from './utils/setAuthHeader';
 import { setCurrentUser, logoutUser } from './actions/authActions';
+import { clearCurrentProfile } from './actions/profileActions';
 import { Provider } from 'react-redux';
 import store from './store';
 import './App.css';
@@ -12,6 +13,9 @@ import Footer from './Components/layout/Footer';
 import Landing from './Components/layout/Landing';
 import Register from './Components/auth/Register';
 import Login from './Components/auth/Login';
+import Dashboard from './Components/layout/Dashboard';
+import AuthenticatedRoute from './Components/common/AuthenticatedRoute';
+import ProfileCreation from './Components/layout/ProfileCreation';
 
 /*
   In the root app, we must check for the token to exists
@@ -22,13 +26,14 @@ import Login from './Components/auth/Login';
   take the user back to the login page cause their data gets corrupted.
 */
 if (localStorage.jwtToken) {
-  setAuthToken(localStorage.jwtToken);
+  setAuthHeader(localStorage.jwtToken);
   const decoded = jwt_decode(localStorage.jwtToken);
   store.dispatch(setCurrentUser(decoded));
 
   const currentTime = Date.now() / 1000;
   if (decoded.exp < currentTime) {
     store.dispatch(logoutUser());
+    store.dispatch(clearCurrentProfile());
     window.location.href = '/login';
   }
 }
@@ -44,6 +49,13 @@ class App extends Component {
             <div className="container">
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
+              {/* Switch allows us to redirect back */}
+              <Switch>
+                <AuthenticatedRoute exact path='/dashboard' component={Dashboard} />
+              </Switch>
+              <Switch>
+                <ProfileCreation exact path='/create-profile' component={ProfileCreation} />
+              </Switch>
             </div>
             <Footer />
           </div>

@@ -1,10 +1,16 @@
-# knowme
+# knowMe
 
-This application will be a modern social media platform named KnowMe.
-This application is geared toward developers who are working on a project.
+# This application is geared toward developers who are working on a project.
 
-Several processes can be done using this app such as:
-  * Customizable Profile
-  * Posting Photos from the Gravatar Email
-  * Interacting with your other users
-  * Change multiple things about your account and get to coding!
+## Several processes can be done using this app such as:
+  * Customizable Profile.
+  * Posting photos from a [Gravatar](https://en.gravatar.com/) email.
+  * Interaction through posts and comments with your group.
+  
+## Acknowledgements:
+
+  - Alaina Schwarz
+  - Chad Wise
+  - Cody Pytash
+  
+
