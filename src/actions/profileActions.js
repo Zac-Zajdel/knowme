@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_PROFILE, PROFILE_LOADING, CLEAR_CURRENT_PROFILE, GET_ERRORS } from './types';
+import { GET_PROFILE, PROFILE_LOADING, CLEAR_CURRENT_PROFILE, GET_ERRORS, SET_CURRENT_USER } from './types';
 
 /*
   We use axios to call our back-end server and then will give the data of a profile
@@ -35,6 +35,28 @@ export const createUserProfile = (profileData, history) => dispatch => {
       payload: err.response.data
     }));
 }
+
+/*
+  Will be called when the user has confirmed to delete their account on the dashboard.
+  The user will be logged out and their payload will be an empty object deleting them 
+  from the system and all of their data.
+*/
+export const deleteAccount = () => dispatch => {
+  axios
+    .delete('/api/profile')
+    .then(res =>
+      dispatch({
+        type: SET_CURRENT_USER,
+        payload: {}
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
 
 export const setProfileLoading = () => {
   return {
