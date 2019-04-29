@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
-import setAuthHeader from './utils/setAuthHeader';
+import setAuthHeader from './actions/setAuthHeader';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
 import { Provider } from 'react-redux';
@@ -16,6 +16,11 @@ import Login from './Components/auth/Login';
 import Dashboard from './Components/layout/Dashboard';
 import AuthenticatedRoute from './Components/common/AuthenticatedRoute';
 import ProfileCreation from './Components/layout/ProfileCreation';
+import EditProfile from './Components/layout/EditProfile';
+import AddExperience from './Components/layout/AddExperience';
+import AddEducation from './Components/layout/AddEducation';
+import Profiles from './Components/layout/ProfileList/Profiles';
+import Posts from './Components/posts/Posts';
 
 /*
   In the root app, we must check for the token to exists
@@ -49,12 +54,27 @@ class App extends Component {
             <div className="container">
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
-              {/* Switch allows us to redirect back */}
+              <Route exact path='/profiles' component={Profiles} />
+              {/* Switch allows us to redirect back 
+                  These Routes can only be accessed if you are authenticated
+              */}
               <Switch>
                 <AuthenticatedRoute exact path='/dashboard' component={Dashboard} />
               </Switch>
               <Switch>
-                <ProfileCreation exact path='/create-profile' component={ProfileCreation} />
+                <AuthenticatedRoute exact path='/create-profile' component={ProfileCreation} />
+              </Switch>
+              <Switch>
+                <AuthenticatedRoute exact path='/edit-profile' component={EditProfile} />
+              </Switch>
+              <Switch>
+                <AuthenticatedRoute exact path='/add-experience' component={AddExperience} />
+              </Switch>
+              <Switch>
+                <AuthenticatedRoute exact path='/add-education' component={AddEducation} />
+              </Switch>
+              <Switch>
+                <AuthenticatedRoute exact path='/feed' component={Posts} />
               </Switch>
             </div>
             <Footer />

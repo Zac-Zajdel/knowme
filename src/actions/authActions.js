@@ -1,5 +1,5 @@
 import axios from 'axios';
-import setAuthHeader from '../utils/setAuthHeader';
+import setAuthHeader from './setAuthHeader';
 import jwt_decode from 'jwt-decode';
 
 import { GET_ERRORS } from './types';

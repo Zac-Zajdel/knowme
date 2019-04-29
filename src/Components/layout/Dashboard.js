@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 import { getCurrentProfile, deleteAccount } from '../../actions/profileActions';
 import ProfileActions from './ProfileActions';
+import Experience from './Experience';
+import Education from './Education';
 
 class Dashboard extends Component {
 
@@ -27,23 +29,26 @@ class Dashboard extends Component {
       to set up their initial profile the same way any other social media does.
     */
     if (profile === null || loading) {
-      dashboardContent = <h1>Loading your dashboard</h1>
+      dashboardContent = <h1 className='text-center lead'>Loading your dashboard</h1>
     } else if (Object.keys(profile).length > 0) {
       dashboardContent = (
         <div>
           <p className="lead">Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link></p>
           <ProfileActions />
+          <Experience experience={profile.experience} />
+          <Education education={profile.education} />
           <div>
-            <button onClick={this.onDeleteClick} className="btn btn-danger">Delete Your Account</button>
+            <button onClick={this.onDeleteClick} className="btn btn-outline-danger">Delete Your Account</button>
           </div>
         </div>
       );
     } else {
       dashboardContent = (
-        <div>
-          <h2 className="lead">Welcome {user.name}</h2>
-          <p>Your profile appears to be empty?</p>
-          <Link to='/create-profile' className='btn btn-lg btn-info'>Create Your Profile</Link>
+        <div className='text-center mt-5'>
+          <h1 className='p-3'>Welcome {user.name}</h1>
+          <h1 className='p-3'>Thanks for joining KnowMe!</h1>
+          <h1 className='p-3'>Lets get started!</h1>
+          <Link to='/create-profile' className='btn btn-lg btn-info m-5'>Create Your Profile</Link>
         </div>
       )
     }
